@@ -78,7 +78,13 @@ Here's an example *Auth Hash* available in `request.env['omniauth.auth']`:
 {
   "provider" => "kakao",
   "uid" => "사용자 UID",
-  "info" => {"name"=>"이름", "image"=> "프로필 사진", "email"=>"이메일", "birthday"=>"생일(생년은 x)", "gender" => "성별"},
+  "info" => {
+    "name"=>"이름", 
+    "image"=> "프로필 사진", 
+    "email"=>"이메일", 
+    "birthday"=>"생일(생년은 x)", 
+    "gender" => "성별"
+  },
   "credentials" =>
    {
     "token" => "토큰",
