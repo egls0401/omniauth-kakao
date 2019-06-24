@@ -76,23 +76,30 @@ Here's an example *Auth Hash* available in `request.env['omniauth.auth']`:
 
 ```ruby
 {
-  :provider => 'kakao',
-  :uid => '123456789',
-  :info => {
-    :name => 'Hong Gil-Dong',
-    :image => 'http://xxx.kakao.com/.../aaa.jpg',
-  },
-  :credentials => {
-    :token => 'ABCDEF...', # OAuth 2.0 access_token, which you may wish to store.
-    :refresh_token => 'OPQRST...', # OAuth 2.0 refresh_token.
-    :expires_at => 1321747205, # when the access token expires (it always will)
-    :expires => true # this will always be true
-  },
-  :extra => {
-    :properties => {
-      :nickname => 'Hong Gil-Dong',
-      :thumbnail_image => 'http://xxx.kakao.com/.../aaa.jpg'
-      :profile_image => 'http://xxx.kakao.com/.../bbb.jpg'
+  "provider" => "kakao",
+  "uid" => "사용자 UID",
+  "info" => {"name"=>"이름", "image"=> "프로필 사진", "email"=>"이메일", "birthday"=>"생일(생년은 x)", "gender" => "성별"},
+  "credentials" =>
+   {
+    "token" => "토큰",
+    "refresh_token" => "refresh 토큰",
+    "expires_at" => "만료 시간",
+    "expires" => true
+   },
+  "extra"=>
+   {
+    "properties" => { "nickname" => "이름" },
+    "raw_info" =>
+      {
+        "has_email" => true,
+        "email_needs_agreement" => false,
+        "is_email_valid" =>true,
+        "is_email_verified" => true,
+        "email" => "a960401@daum.net",
+        "has_gender" => true,
+        "gender_needs_agreement" => false,
+        "gender" => "male"
+      }
     }
   }
 }
